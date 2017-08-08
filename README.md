@@ -1,5 +1,5 @@
 # NumberGame
 
-This is a simple number guessing game.
+This is a simple number guessing game combined with Python's Turtle function.
 
-![Alt text](https://i.gyazo.com/ff061a021338b4cc8ab93de3895fa22d.png "Optional title")
+![Picture of the Game with Python code](https://i.gyazo.com/ff061a021338b4cc8ab93de3895fa22d.png)

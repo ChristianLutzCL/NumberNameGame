@@ -39,6 +39,6 @@ input_two = int(input("Your number two: "))
 # Start function and store generated number into a variable
 gen_nr = number_generator(input_one, input_two)
 
-print(gen_nr) # gen_nr to read
+print(gen_nr) # gen_nr output
 
 check_number()

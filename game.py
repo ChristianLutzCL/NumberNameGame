@@ -3,6 +3,7 @@ import turtle
 import urllib
 import os
 
+
 my_turtle = turtle.Turtle()
 
 #def test():
@@ -17,8 +18,44 @@ def number_generator(number_one, number_two):
     generated_number = random.randrange(number_one, number_two)
     return generated_number
 
+
 def dec_n():
     print("Test")
+    input_one = int(input("Nummer eins: "))
+    input_two = int(input("Nummer zwei: "))
+
+    random_nr = number_generator(input_one, input_two)
+
+    input_saved = []
+
+    while True:
+
+        input_random = int(input("Deine Nummer: "))
+
+        if random_nr == input_random:
+            print("Genau!")
+            input_saved.append(input_random)
+            print(input_saved)
+
+            my_turtle.forward(100)
+            my_turtle.right(input_saved[0])
+            my_turtle.forward(100)
+
+            home()
+            break
+        elif random_nr > input_random:
+            print("Nummer zu klein")
+            input_saved.append(input_random)
+            print(input_saved)
+        elif random_nr < input_random:
+            print("Nummer zu groß")
+            input_saved.append(input_random)
+            print(input_saved)
+        else:
+            print("Fehler!")
+
+
+
 
 def dec_a():
     print("Test")

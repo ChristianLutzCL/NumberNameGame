@@ -8,10 +8,10 @@ my_turtle = turtle.Turtle()
 
 #def test():
 
-def turtle():
-    for i in range(4):
+def turtle(n):
+    for i in range(n):
         my_turtle.forward(100)
-        my_turtle.right(90)
+        my_turtle.right(n + 10)
 
 def number_generator(number_one, number_two):
     #Generate a random number and return it
@@ -37,9 +37,8 @@ def dec_n():
             input_saved.append(input_random)
             print(input_saved)
 
-            my_turtle.forward(100)
-            my_turtle.right(input_saved[0])
-            my_turtle.forward(100)
+            turtle(input_saved[0])
+
 
             home()
             break

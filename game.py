@@ -89,11 +89,8 @@ def name_checker(c_name):
 
         if input_name == name:
             print("Wow! You Won!")
-<<<<<<< HEAD
             home()
             break
-=======
->>>>>>> 735039484bf3b9dbb307f70e560d548d5d2a90fe
         else:
             print("Sorry, wrong...")
 

@@ -14,11 +14,12 @@ def number_generator(number_one, number_two):
 
 
 def home():
-    print("----MENU----")
+    print("--------MENU--------")
     print("[A] - NumberGame")
     print("[B] - NameGame")
     print("[Q] - Quit")
-    print("------------")
+    print("--------------------")
+    print("")
 
     decision = input("Your decision: ")
 

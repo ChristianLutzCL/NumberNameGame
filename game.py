@@ -36,8 +36,6 @@ def home():
 
 
 def number_game():
-    points = 0
-
     print("Welcome to NumberGame!")
     print("Set a range to guess")
     num1 = int(input("Number one: "))
@@ -50,8 +48,6 @@ def number_game():
 
         if your_number == random_number:
             print("Correct!")
-            points += 1
-            print(points)
             home()
             break
         elif your_number > random_number:
@@ -66,10 +62,10 @@ def name_game():
     print("Welcome to NameGame!")
     print("You have to advise the right names based on some hints.")
 
-    #names = ["Peter", "Franz", "Holger", "Anna", "Nina", "Lena", "Lea", "Lara"]
+    #name = ["Peter", "Franz", "Holger", "Anna", "Nina", "Lena", "Lea", "Lara"]
 
     name = names.get_first_name()
-    print(name)
+    #print(name)
     name_len = len(name)
     #choosen_name = name[random.randrange(0, name_len)] # For choosing a name in the names list
     name_checker(name)
@@ -93,7 +89,7 @@ def name_checker(c_name):
             letter_rand2 = name[random_pos2]
 
             if name_len != 5:
-                print("The letter on position " + str(random_pos2) + " is " + str(letter_rand2)) #BUG: random_pos2 prints position 'l'
+                print("The letter on position " + str(random_pos2) + " is " + str(letter_rand2))
                 while letter_rand == letter_rand2:
                     print("letter_rand == letter_rand2")
                     break
@@ -124,6 +120,7 @@ def name_checker(c_name):
             break
         else:
             print("Sorry, wrong...")
+            print("The right name was " + name)
 
 
 def quit():

@@ -3,6 +3,7 @@
 
 #---- IMPORT ----
 import random
+import names
 
 
 
@@ -65,13 +66,13 @@ def name_game():
     print("Welcome to NameGame!")
     print("You have to advise the right names based on some hints.")
 
-    names = ["Peter", "Franz", "Holger", "Anna", "Nina", "Lena", "Lea", "Lara"]
+    #names = ["Peter", "Franz", "Holger", "Anna", "Nina", "Lena", "Lea", "Lara"]
 
-    name_len = len(names)
-    choosen_name = names[random.randrange(0, name_len)]
-    print(choosen_name)
-
-    name_checker(choosen_name)
+    name = names.get_first_name()
+    print(name)
+    name_len = len(name)
+    #choosen_name = name[random.randrange(0, name_len)] # For choosing a name in the names list
+    name_checker(name)
 
 
 def name_checker(c_name):
@@ -80,11 +81,40 @@ def name_checker(c_name):
         name = c_name
         name_len = len(name)
 
-        random_pos = random.randrange(0, name_len)
-        letter = name[random_pos]
+        random_pos = random.randrange(1, name_len)
+        letter_one = name[0]
+        letter_rand = name[random_pos]
 
+
+        def name_string_generator():
+            name_string_list = []
+
+            random_pos2 = random.randrange(1, name_len)
+            letter_rand2 = name[random_pos2]
+
+            if name_len != 5:
+                print("The letter on position " + str(random_pos2) + " is " + str(letter_rand2)) #BUG: random_pos2 prints position 'l'
+                while letter_rand == letter_rand2:
+                    print("letter_rand == letter_rand2")
+                    break
+                else:
+                    print("letter_rand != letter_rand2")
+
+            for x in name:
+                if x == letter_one or x == letter_rand or x == letter_rand2:
+                    name_string_list.append(x)
+                else:
+                    name_string_list.append("*")
+
+            name_string = "".join(name_string_list)
+            return name_string
+
+        print("------------------------------------------------------------")
         print("The length of the name is " + str(name_len))
-        print("The letter on position " + str(random_pos) + " is " + str(letter))
+        print("The letter on position one is " + str(letter_one))
+        print("The letter on position " + str(random_pos) + " is " + str(letter_rand))
+        print(name_string_generator())
+        print("------------------------------------------------------------")
 
         input_name = input("Name: ")
 

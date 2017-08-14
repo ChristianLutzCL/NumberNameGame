@@ -1,4 +1,4 @@
-# NumberGame
+# NumberNameGame
 
 Two more or less simple games:
 NumberGame

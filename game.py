@@ -14,10 +14,22 @@ def number_generator(number_one, number_two):
     return generated_number
 
 
+def word_generator():
+    word_array = ["Haus", "Auto", "Fahrrad", "Computer", "Tastatur", "Maus"
+                  "Kopfhörer", "Lautsprecher", "Musik", "Flasche", "Tasse", "Becher"
+                  "Flugzeug", "Ampel", "Lampe", "Deutschland", "Herz", "Baum", "Himmel"]
+
+    word = random.choice(word_array)
+    word_length = len(word)
+
+    print(word)
+
+
 def home():
     print("--------MENU--------")
     print("[A] - NumberGame")
     print("[B] - NameGame")
+    print("[C] - HangMan")
     print("[Q] - Quit")
     print("--------------------")
     print("")
@@ -28,6 +40,8 @@ def home():
         number_game()
     elif decision == "B" or decision == "b":
         name_game()
+    elif decision == "C" or decision == "c":
+        hangman_game()
     elif decision == "Q" or decision == "q":
         quit()
     else:
@@ -71,8 +85,15 @@ def name_game():
     name_checker(name)
 
 
-def name_checker(c_name):
+def hangman_game():
+    print("Welcome to HangMan!")
+    print("You have to guess a random word based on the information, which letter where is.")
+    print("You ask the game which letter is in this word. If the letter is not in the word, you get one -Point")
 
+    word_generator()
+
+
+def name_checker(c_name):
     while True:
         name = c_name
         name_len = len(name)
@@ -88,7 +109,7 @@ def name_checker(c_name):
             random_pos2 = random.randrange(1, name_len)
             letter_rand2 = name[random_pos2]
 
-            if name_len != 5:
+            if name_len != 4:
                 print("The letter on position " + str(random_pos2) + " is " + str(letter_rand2))
                 while letter_rand == letter_rand2:
                     print("letter_rand == letter_rand2")
@@ -116,11 +137,14 @@ def name_checker(c_name):
 
         if input_name == name:
             print("Wow! You Won!")
-            home()
+            print("")
+            name_game()
             break
         else:
             print("Sorry, wrong...")
             print("The right name was " + name)
+            print("")
+            name_game()
 
 
 def quit():
